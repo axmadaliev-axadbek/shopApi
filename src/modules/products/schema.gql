@@ -1,0 +1,43 @@
+type Query {
+    products(
+            productId: Int
+            model: String
+            productName: String
+            color: String
+            price: String
+        ): [Products]!
+}
+
+
+
+type Products {
+    productId: Int!
+    subCategoryId: Int!
+    model: String
+    productName: String
+    color: String
+    price: String
+}
+type Mutation {
+    postProduct(
+        productId: Int
+        subCategoryId: Int!
+        model: String
+        productName: String
+        color: String
+        price: String
+    ): Response!
+}
+
+type Response {
+    status: Int!
+    message: String!
+    data: Any
+}
+
+scalar Any
+
+input Pagination {
+    page: Int!
+    limit: Int!
+}

@@ -1,0 +1,30 @@
+type Query {
+    users(userId: Int): [User]!
+}
+
+type User {
+    userId: Int!
+    username: String!
+    password: String
+    email: String
+}
+type Mutation {
+    postUser(
+        username: String!
+        email: String
+        password: String
+    ): Response!
+}
+
+type Response {
+    status: Int!
+    message: String!
+    data: Any
+}
+
+scalar Any
+
+input Pagination {
+    page: Int!
+    limit: Int!
+}

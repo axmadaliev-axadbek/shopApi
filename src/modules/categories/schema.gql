@@ -1,0 +1,35 @@
+type Query {
+    categories(categoryId: Int): [Categories]!
+    subCategories: [subCategories]!
+}
+
+type Categories {
+    categoryId: Int!
+    categoryName: String!
+    subCategories: [subCategories]!
+}
+
+type subCategories {
+    subCategoryId: Int!
+    categoryId: Int!
+    subCategoryName: String!
+}
+type Mutation {
+    postCategory(
+        categoryId: Int!
+        categoryName: String
+    ): Response!
+}
+
+type Response {
+    status: Int!
+    message: String!
+    data: Any
+}
+
+scalar Any
+
+input Pagination {
+    page: Int!
+    limit: Int!
+}

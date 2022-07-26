@@ -1,0 +1,39 @@
+type Query {
+    subCategories(subCategoryId: Int): [subCategories]!
+    products: [Products]!
+}
+
+type subCategories {
+    subCategoryId: Int!
+    categoryId: Int!
+    subCategoryName: String
+    products: [Products]!
+}
+
+type Products {
+    productId: Int!
+    subCategoryId: Int!
+    model: String
+    productName: String
+    color: String
+    price: String
+}
+type Mutation {
+    postSubCategory(
+        categoryId: Int!
+        subCategoryName: String
+    ): Response!
+}
+
+type Response {
+    status: Int!
+    message: String!
+    data: Any
+}
+
+scalar Any
+
+input Pagination {
+    page: Int!
+    limit: Int!
+}

@@ -1,0 +1,29 @@
+{
+  "name": "12-dars",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon -e * src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphql-tools/schema": "^8.5.0",
+    "apollo-server": "^3.10.0",
+    "apollo-server-core": "^3.10.0",
+    "graphql": "^16.5.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "sha256": "^0.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "imports": {
+    "#users": "./src/database/users.js"
+  }
+}
